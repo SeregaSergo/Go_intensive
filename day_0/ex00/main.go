@@ -2,6 +2,7 @@ package main
 
 import (
 	"bufio"
+	"ex00/pkg/stat"
 	"flag"
 	"fmt"
 	"os"
@@ -14,19 +15,19 @@ func main() {
 	getInput(&inputArray)
 
 	if *flags["mean"] {
-		fmt.Printf("Mean: %v\n", Mean(inputArray))
+		fmt.Printf("Mean: %v\n", stat.Mean(inputArray))
 	}
 
 	if *flags["median"] {
-		fmt.Printf("Median: %v\n", Median(inputArray))
+		fmt.Printf("Median: %v\n", stat.Median(inputArray))
 	}
 
 	if *flags["mode"] {
-		fmt.Printf("Mode: %v\n", Mode(inputArray))
+		fmt.Printf("Mode: %v\n", stat.Mode(inputArray))
 	}
 
 	if *flags["deviation"] {
-		fmt.Printf("SD: %v\n", Deviation(inputArray))
+		fmt.Printf("SD: %v\n", stat.Deviation(inputArray))
 	}
 }
 

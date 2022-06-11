@@ -1,6 +1,8 @@
-package main
+package stat
 
-import "math"
+import (
+	"math"
+)
 
 func Deviation(inputArray []float64) float64 {
 	var result float64

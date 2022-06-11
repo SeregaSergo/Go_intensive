@@ -1,4 +1,4 @@
-package main
+package stat
 
 func Mean(inputArray []float64) float64 {
 	var result float64
