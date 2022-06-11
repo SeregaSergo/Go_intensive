@@ -10,7 +10,7 @@ import (
 
 func main() {
 	flags := getFlags()
-	inputArray := make([]int, 0)
+	inputArray := make([]float64, 0)
 	getInput(&inputArray)
 
 	if *flags["mean"] {
@@ -60,7 +60,7 @@ func changeFlagsToTrue(m map[string]*bool) {
 	}
 }
 
-func getInput(inputArray *[]int) {
+func getInput(inputArray *[]float64) {
 	sc := bufio.NewScanner(os.Stdin)
 	for sc.Scan() {
 		line := sc.Text()
@@ -75,7 +75,7 @@ func getInput(inputArray *[]int) {
 				fmt.Println("Error: is not a number")
 			}
 		} else {
-			*inputArray = append(*inputArray, s)
+			*inputArray = append(*inputArray, float64(s))
 		}
 	}
 }
