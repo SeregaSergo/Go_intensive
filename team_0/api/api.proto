@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package api;
+
+option go_package = "./api";
+
+import "google/protobuf/timestamp.proto";
+
+service Communication {
+  rpc streamFrequencies(Empty) returns (stream Frequency) {}
+}
+
+message Frequency {
+  string session_id = 1;
+  double frequency = 2;
+  google.protobuf.Timestamp time = 3;
+}
+
+message Empty {}
