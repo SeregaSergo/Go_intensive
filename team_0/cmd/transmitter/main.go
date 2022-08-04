@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	pb "github.com/SeregaSergo/Go_intensive/team_0/api"
+	"github.com/SeregaSergo/Go_intensive/team_0/internal/transport"
 	"google.golang.org/grpc"
 	"log"
 	"net"
@@ -16,11 +16,11 @@ func main() {
 		log.Fatalf("failed to listen: %v", err)
 	}
 
-	s := pb.Transmitter{}
+	s := transport.Transmitter{}
 
 	grpcServer := grpc.NewServer()
 
-	pb.RegisterCommunicationServer(grpcServer, &s)
+	transport.RegisterCommunicationServer(grpcServer, &s)
 
 	if err := grpcServer.Serve(lis); err != nil {
 		log.Fatalf("failed to serve: %s", err)

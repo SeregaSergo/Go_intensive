@@ -1,4 +1,4 @@
-package api
+package transport
 
 import (
 	"github.com/google/uuid"
@@ -36,6 +36,5 @@ func (t *Transmitter) StreamFrequencies(in *Empty, stream Communication_StreamFr
 		if err := stream.Send(&frequency); err != nil {
 			return err
 		}
-		//time.Sleep(time.Second)
 	}
 }

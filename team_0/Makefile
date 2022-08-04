@@ -1,18 +1,18 @@
 SERVER_OUT := transmitter
 CLIENT_OUT := receiver
-API_PATH	= ./api
+API_PATH	= ./internal/transport
 PKG := "gitlab.com/pantomath-io/demo-grpc"
 
 .PHONY: all api build_server build_client
 
 all: build_server build_client
 
-api: api/api.pb.go api/api_grpc.pb.go ## Auto-generate grpc go sources
+api: internal/transport/api.pb.go internal/transport/api_grpc.pb.go ## Auto-generate grpc go sources
 
-api/api.pb.go: api/api.proto
+internal/transport/api.pb.go: internal/transport/api.proto
 	@protoc --go_out=. $(API_PATH)/api.proto
 
-api/api_grpc.pb.go: api/api.proto
+internal/transport/api_grpc.pb.go: internal/transport/api.proto
 	@protoc --go-grpc_out=. $(API_PATH)/api.proto
 
 dep: ## Get the dependencies

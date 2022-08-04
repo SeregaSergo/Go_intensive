@@ -1,0 +1,26 @@
+{{define "content" -}}
+{{- if ne .Error "" -}}
+<h7>{{.Error}}</h7>
+{{else}}
+<h5>Total: {{.Total}}</h5>
+<ul>
+{{range $index, $item :=.Places }}
+    <li>
+        <div>{{ $item.Name }}</div>
+        <div>{{ $item.Address }}</div>
+        <div>{{ $item.Phone }}</div>
+    </li>
+{{end}}
+</ul>
+
+{{- if gt .PrevPage 0 -}}
+<a href="/places/?page={{.PrevPage}}">Previous</a>
+{{end}}
+{{- if le .NextPage .NumLastPage -}}
+<a href="/places/?page={{.NextPage}}">Next</a>
+{{end}}
+{{- if le .NextPage .NumLastPage -}}
+<a href="/places/?page={{.NumLastPage}}">Last</a>
+{{end}}
+{{end}}
+{{end}}

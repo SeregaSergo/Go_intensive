@@ -4,7 +4,7 @@
 // 	protoc        v3.19.4
 // source: api/api.proto
 
-package api
+package transport
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"

@@ -1,0 +1,10 @@
+github.com/sirupsen/logrus          логирование
+github.com/spf13/viper              работа с конфигами
+github.com/joho/godotenv            работа с файлами .env
+github.com/jmoiron/sqlx             работа с базами данных (расширение database/sql)
+github.com/golang-migrate/migrate   для миграций в БД в том числе cli утилита
+github.com/gin-gonic/gin            HTTP фреймворк
+github.com/swaggo/gin-swagger
+github.com/dgrijalva/jwt-go         работа с JWT токенами авторизации
+google.golang.org/grpc              GRPC
+gorm.io/gorm                        ORM
